@@ -1,8 +1,9 @@
+name: msa_3
 services:
   database:
     image: mysql:latest
     container_name: database
-    restart: always
+    restart: "no"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: user
@@ -16,7 +17,7 @@ services:
   app:
     build: .
     container_name: my_app
-    restart: always
+    restart: "no"
     ports:
       - "8080:8080"
     environment:
